@@ -46,7 +46,7 @@ export class NgZeeDataTableComponent implements OnInit, OnChanges {
     // this.createCurPage()
     if (params.rows) {
       console.table(params.rows);
-      this.createCurPage();
+      this.createCurPage(null);
     }
   }
 
@@ -54,21 +54,24 @@ export class NgZeeDataTableComponent implements OnInit, OnChanges {
     this.btnClicked.emit({ index: index, element: element });
   }
 
-  createCurPage() {
+  createCurPage(itemsPerPage) {
+    if (itemsPerPage) {
+      this.itemsPerPage = itemsPerPage;
+    }
+
     if (this.rows && this.rows.length) {
       this.totalPages = Math.ceil(this.rows.length / this.itemsPerPage);
       if (this.curPage >= this.totalPages) {
         this.curPage = 0;
       }
       this.newArr = this.rows.filter((val, i) => i >= this.curPage * this.itemsPerPage && i < (this.curPage + 1) * this.itemsPerPage)
-      console.table(this.newArr);
     }
   }
 
   incrementPage() {
     if (this.curPage + 1 < this.totalPages) {
       this.curPage++;
-      this.createCurPage();
+      this.createCurPage(null);
     }
     this.indexMatched = null
   }
@@ -76,7 +79,7 @@ export class NgZeeDataTableComponent implements OnInit, OnChanges {
   decrementPage() {
     if (this.curPage > 0) {
       this.curPage--;
-      this.createCurPage();
+      this.createCurPage(null);
     }
     this.indexMatched = null
   }
@@ -84,7 +87,7 @@ export class NgZeeDataTableComponent implements OnInit, OnChanges {
   gotoPage(pageNum: number) {
     if (pageNum > 0 && pageNum < this.totalPages) {
       this.curPage = pageNum - 1;
-      this.createCurPage();
+      this.createCurPage(null);
     }
   }
 

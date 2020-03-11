@@ -24,3 +24,224 @@
     position: relative;
     top: 1px;
 }
+
+
+
+
+//--------------------------------------------------------
+/* The container must be positioned relative: */
+.custom-select {
+    position: relative;
+    font-family: Arial;
+}
+
+.custom-select select {
+    // display: none;
+    /*hide original SELECT element: */
+}
+
+.select-selected {
+    background-color: DodgerBlue;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+//-----------------------------------------------------------------
+.menu,
+.menu ul,
+.menu li,
+.menu a {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.menu {
+    height: 40px;
+    width: 505px;
+
+    background: #4c4e5a;
+    background: -webkit-linear-gradient(top, #4c4e5a 0%, #2c2d33 100%);
+    background: -moz-linear-gradient(top, #4c4e5a 0%, #2c2d33 100%);
+    background: -o-linear-gradient(top, #4c4e5a 0%, #2c2d33 100%);
+    background: -ms-linear-gradient(top, #4c4e5a 0%, #2c2d33 100%);
+    background: linear-gradient(top, #4c4e5a 0%, #2c2d33 100%);
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.menu li {
+    position: relative;
+    list-style: none;
+    float: left;
+    display: block;
+    height: 40px;
+}
+
+.menu li a {
+    display: block;
+    padding: 0 14px;
+    margin: 6px 0;
+    line-height: 28px;
+    text-decoration: none;
+
+    border-left: 1px solid #393942;
+    border-right: 1px solid #4f5058;
+
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+
+    color: #f3f3f3;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
+
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    -o-transition: color .2s ease-in-out;
+    -ms-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+}
+
+.menu li:first-child a {
+    border-left: none;
+}
+
+.menu li:last-child a {
+    border-right: none;
+}
+
+.menu li:hover>a {
+    color: #8fde62;
+}
+
+.menu ul {
+    position: absolute;
+    top: 40px;
+    left: 0;
+
+    opacity: 0;
+    background: #1f2024;
+
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+
+    -webkit-transition: opacity .25s ease .1s;
+    -moz-transition: opacity .25s ease .1s;
+    -o-transition: opacity .25s ease .1s;
+    -ms-transition: opacity .25s ease .1s;
+    transition: opacity .25s ease .1s;
+}
+
+.menu li:hover>ul {
+    opacity: 1;
+}
+
+.menu ul li {
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+
+    -webkit-transition: height .25s ease .1s;
+    -moz-transition: height .25s ease .1s;
+    -o-transition: height .25s ease .1s;
+    -ms-transition: height .25s ease .1s;
+    transition: height .25s ease .1s;
+}
+
+.menu li:hover>ul li {
+    height: 36px;
+    overflow: visible;
+    padding: 0;
+}
+
+.menu ul {
+    position: absolute;
+    top: 40px;
+    left: 0;
+
+    opacity: 0;
+    background: #1f2024;
+
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+
+    -webkit-transition: opacity .25s ease .1s;
+    -moz-transition: opacity .25s ease .1s;
+    -o-transition: opacity .25s ease .1s;
+    -ms-transition: opacity .25s ease .1s;
+    transition: opacity .25s ease .1s;
+}
+
+.menu li:hover>ul {
+    opacity: 1;
+}
+
+.menu ul li {
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+
+    -webkit-transition: height .25s ease .1s;
+    -moz-transition: height .25s ease .1s;
+    -o-transition: height .25s ease .1s;
+    -ms-transition: height .25s ease .1s;
+    transition: height .25s ease .1s;
+}
+
+.menu li:hover>ul li {
+    height: 36px;
+    overflow: visible;
+    padding: 0;
+}

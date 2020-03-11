@@ -42,6 +42,24 @@
   </tbody>
 </table>
 
+<div class="custom-select" style="width:200px;">
+  <select (change)="createCurPage($event.target.value)">
+    <option *ngFor="let item of recordsPerPage" [value]="item.num">{{item.num}}</option>
+  </select>
+</div>
+
+<!-- <div class="table-controls">
+  <div class="col-md-2">
+    <div *ngIf="newArr.length >= 10">
+      <mat-form-field matTooltip="Records per page" matTooltipPosition="above">
+        <mat-select [(ngModel)]="itemsPerPage" (selectionChange)="createCurPage()">
+          <mat-option *ngFor="let item of recordsPerPage" [value]="item.num">{{item.num}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div> -->
 <!-- <div class="table-controls">
   <div class="col-md-2">
     <div *ngIf="newArr.length >= 10">
@@ -70,3 +88,24 @@
     </button>
   </div>
 </div> -->
+
+<ul class="menu">
+
+  <!-- <li><a href="#">My dashboard</a></li>
+  <li><a href="#">Likes</a></li> -->
+  <li><a href="#">Items per page: {{itemsPerPage}}</a>
+
+    <ul>
+      <li *ngFor="let item of recordsPerPage" [value]="item.num">
+        <a href="#" class="documents" (click)="createCurPage(item.num)">{{item.num}}</a>
+      </li>
+      <!-- <li><a href="#" class="messages">Messages</a></li>
+      <li><a href="#" class="signout">Sign Out</a></li> -->
+    </ul>
+
+  </li>
+  <!-- <li><a href="#">Uploads</a></li>
+  <li><a href="#">Videos</a></li>
+  <li><a href="#">Documents</a></li> -->
+
+</ul>

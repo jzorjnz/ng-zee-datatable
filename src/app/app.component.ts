@@ -13,7 +13,7 @@ export class AppComponent {
     // { value: 'serverTime', displayName: 'Time', type: 'string', pipe: null, pipeArgs: ['medium'] },
     { value: 'serverTime', displayName: 'Time', type: 'string', pipe: DatePipe, pipeArgs: ['medium'] },
     { value: 'type', displayName: 'Type', type: 'string' },
-    { value: 'open', displayName: 'Open', type: 'button', image: "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" },
+    { value: 'open', displayName: 'Open', type: 'button' },
     { value: 'geofenceId', displayName: 'Geofence', type: 'number' },
     { value: 'maintenanceId', displayName: 'Maintenance', type: 'string' },
     { value: 'positionId', displayName: 'Position', type: 'number' },
